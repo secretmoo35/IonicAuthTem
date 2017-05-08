@@ -1,0 +1,63 @@
+<ion-view view-title="Shopping cart" class="cart-view" cache-view="false">
+  <ion-content>
+    <div ng-if="products.length == 0">
+      <div class="empty-cart">
+        <i class="icon ion-ios-cart-outline"></i>
+        <h3 class="no-products">Your shopping cart is empty</h3>
+      </div>
+    </div>
+    <div ng-if="products.length > 0">
+      <!---->
+      <div ng-repeat="product in products">
+        <div class="products-list">
+          <div class="product-list-item">
+            <div class="row">
+              <span class="product-title">{{product.title}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="list">
+          <div class="item cart-list item-thumbnail-left">
+            <div class="row">
+              <div class="col col-25">
+                <img ng-src="{{product.picture}}" style="width:100%;">
+              </div>
+              <div class="col col-50">
+                <div class="list">
+                  <label class="item item-input item-select" style="height: 30px; border-color: #fff;">     
+                    <select>
+                      <option value="1">Shiny Black Gold</option>
+                      <option value="2">Black Ice Revo</option>
+                      <option value="3">Black Silver</option>
+                    </select>
+                </label>
+                </div>
+                <div style="padding-left: 15px;">
+                  <button class="button button-clear button-small button-assertive remove-product-button" ng-click="removeProductFromCart(product)">
+                      Remove
+                </button>
+                </div>
+              </div>
+              <div class="col col-25">
+                <div class="list">
+                  <label class="item item-input item-select" style="height: 30px; border-color: #fff;">     
+                    <select>
+                      <option ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]" value="{{i}}">{{i}}</option>
+                    </select>
+                </label>
+                </div>
+                <span class="product-price">${{product.price}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="row padding">
+        <button class="button button-block button-energized checkout-btn" ui-sref="app.shipping-address">
+          Continue to Checkout
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
