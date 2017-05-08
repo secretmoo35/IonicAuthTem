@@ -18,8 +18,7 @@ angular.module('your_app_name', [
 
   .constant('config', {
     baseUrl: "http://localhost:8100/",
-    apiUrl: "http://secret-md.herokuapp.com/"
-    // apiUrl: "http://localhost:3000/"
+    apiUrl: "http://localhost:3000/"
   })
   // Enable native scrolls for Android platform only,
   // as you see, we're disabling jsScrolling to achieve this.
